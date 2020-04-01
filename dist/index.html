@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>VideoApp</title>
+  <link href="main-4b343e40.css" rel="stylesheet"></head>
+  <body>
+  
+    <div class="modal modal--hidden modal--invisible">
+      <section class="modal__container">
+        <h2 class="modal__title">Вход</h2>
+        <form class="modal__form">
+          <label class="modal__login-label">
+            <input class="modal__login form-input" id="modal-login" placeholder="Логин" type="text">
+          </label>
+          <label class="modal__login-label">
+            <input class="modal__pass form-input" id="modal-pass" placeholder="Пароль" type="password">
+          </label>
+          <label class="modal__remember-label">
+            <input class="modal__remember" type="checkbox" id="modal-remember">Запомнить
+            <label class="modal__remember-box" for="modal-remember"> </label>
+          </label>
+          <span class="modal__prompt"> </span>
+          <input class="modal__confirm login-btn" type="submit" value="Войти">
+        </form>
+      </section>
+      <div class="modal__background"></div>
+    </div>
+  
+    <header class="header">
+      <div class="wrapper header__container">
+          
+        
+        <div class="header__logo-container">
+          <a class="header__logo" href="#">
+            <span class="header__logo-text">Видеосервис</span>
+          </a>
+          <img class="header__logo-img" src="../src/img/icons/logo.svg" width="36" height="36" alt="logo">
+        </div>
+        
+        <form class="header__form">
+          <label>
+            <input class="header__search-input form-input" placeholder="Поиск..." type="text">
+          </label>
+          <input class="header__search-confirm" type="submit" value="Найти">
+        </form>
+        
+        <div class="header__auth-container">
+          <button class="header__login login-btn">Войти</button>
+          <div class="header__logout-container">
+            <span class="header__user-name"> </span>
+            <button class="header__logout header__logout--hidden">Выйти</button>
+          </div>
+        </div>
+        
+      </div>
+    </header>
+    
+    <main>
+      <div class="wrapper" id="container">
+        
+        <nav class="content-switcher">
+          <button class="content-switcher-tab content-switcher-tab--active" id="films">Фильмы</button>
+          <button class="content-switcher-tab" id="channels">Телеканалы</button>
+        </nav>
+        
+      </div>
+    </main>
+    
+    
+    <footer class="footer">
+      <div class="wrapper footer__wrapper">
+        
+        <img class="footer__img" src="../src/img/icons/archer-logo.svg" width="32" height="64" alt="footer-logo">
+        
+        <div class="footer__contacts">
+          <p class="footer__address">
+            426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК&nbsp;&laquo;Металлург&raquo;)
+          </p>
+          <div class="footer__tel-container">
+            <a class="footer__tel-link" href="tel:+73412938861">+7 (3412) 93-88-61</a>
+            ,
+            <a class="footer__tel-link" href="tel:+73412432929">43-29-29</a>
+          </div>
+          <a class="footer__base-link" href="https://htc-cs.ru" target="_blank">htc-cs.ru</a>
+        </div>
+        
+      </div>
+    </footer>
+
+    
+    <template id="content-template" style="display:none">
+
+      <section class="films">
+
+        <section class="films__category films__category--novelty">
+          <h2 class="films__category-headline films__category-headline--fire">Новинки</h2>
+
+          <ul class="films__category__list">
+
+            <li class="films__category__item novelty__item">
+              <a class="novelty__item-container" href="#">
+                <div class="novelty__item-background" style="background: url('../src/img/novelty-cat.jpg') 50% 0 no-repeat;">
+                  <p class="novelty__item-layout">В&nbsp;новом выпуске ми-ми-мишки изобретут машину сна, а&nbsp;Дракоша
+                    Тоша научит завязывать шнурки. Также зрители увидят новые серии мультфильмов &laquo;Четверо
+                    в&nbsp;кубе&raquo;, &laquo;Лео и&nbsp;Тиг&raquo; и&nbsp;совершенно новый мультсериал &laquo;Снежная
+                    королева: Хранители чудес&raquo;. &laquo;МУЛЬТ в&nbsp;кино. Выпуск 103. Некогда
+                    грустить!&raquo;&nbsp;&mdash; в&nbsp;кинотеатрах с&nbsp;28&nbsp;сентября!</p>
+                </div>
+                <span class="novelty__item-title">Мульт в&nbsp;кино. Выпуск &#8470;&nbsp;103. Некогда грустить!</span>
+              </a>
+            </li>
+
+            <li class="films__category__item novelty__item">
+              <a class="novelty__item-container" href="#">
+                <div class="novelty__item-background" style="background: url('../src/img/novelty-batman.jpg') 50% 0 no-repeat;">
+                  <p class="novelty__item-layout">Новый &laquo;Бэтмен&raquo; положит начало целой киновселенной.
+                    Одного героя Готэму явно мало. Перезапуск франшизы о&nbsp;Тёмном рыцаре</p>
+                </div>
+                <span class="novelty__item-title">Новый Бэтмен</span>
+              </a>
+            </li>
+
+            <li class="films__category__item novelty__item">
+              <a class="novelty__item-container" href="#">
+                <div class="novelty__item-background" style="background: url('../src/img/novelty-hollywood.jpg') 50% 0 no-repeat;">
+                  <p class="novelty__item-layout">Фильм повествует о&nbsp;череде событий, произошедших в&nbsp;
+                    Голливуде в&nbsp;1969&nbsp;году, на&nbsp;закате его &laquo;золотого века&raquo;. Известный актер
+                    Рик Далтон и&nbsp;его дублер Клифф Бут пытаются найти свое место в&nbsp;стремительно меняющемся
+                    мире киноиндустрии.</p>
+                </div>
+                <span class="novelty__item-title">Однажды... в&nbsp;Голливуде</span>
+              </a>
+            </li>
+
+            <li class="films__category__item novelty__item">
+              <a class="novelty__item-container" href="#">
+                <div class="novelty__item-background" style="background: url('../src/img/novelty-girl.jpg') 50% 0 no-repeat;">
+                  <p class="novelty__item-layout">Танцовщицы элитного стриптиз-клуба, клиенты которого&nbsp;&mdash;
+                    известные финансисты с&nbsp;Уолл-Стрит&nbsp;&mdash; привыкли к&nbsp;большим заработкам
+                    и&nbsp;роскошной жизни. Но&nbsp;после финансового кризиса 2008 года посетителей в&nbsp;клубе
+                    заметно поубавилось, и&nbsp;деньги к&nbsp;девушкам уже не&nbsp;текут рекой. Тяжёлые времена
+                    требуют отчаянных мер, и&nbsp;бывшие танцовщицы решаются на&nbsp;авантюрный шаг.</p>
+                </div>
+                <span class="novelty__item-title">Стриптизёрши</span>
+              </a>
+            </li>
+
+          </ul>
+        </section>
+
+        <section class="films__category films__category--genres">
+          <h2 class="films__category-headline">Жанры</h2>
+
+          <ul class="films__category__list">
+
+            <li class="films__category__item genres__item">
+              <a class="genres__item-container" href="#">
+                <img src="../src/img/icons/smile-happy.png" width="48" height="49" alt="comedy">
+                <span class="genres__item-title">Комедии</span>
+              </a>
+              <div class="genres__item-background genres__item-background--comedy"></div>
+            </li>
+
+            <li class="films__category__item genres__item">
+              <a class="genres__item-container" href="#">
+                <img src="../src/img/icons/smile-sad.png" width="48" height="49" alt="drama">
+                <span class="genres__item-title">Комедии</span>
+              </a>
+              <div class="genres__item-background genres__item-background--drama"></div>
+            </li>
+
+            <li class="films__category__item genres__item">
+              <a class="genres__item-container" href="#">
+                <img src="../src/img/icons/smile-alien.png" width="48" height="49" alt="fantasy">
+                <span class="genres__item-title">Комедии</span>
+              </a>
+              <div class="genres__item-background genres__item-background--fantasy"></div>
+            </li>
+
+            <li class="films__category__item genres__item">
+              <a class="genres__item-container" href="#">
+                <img src="../src/img/icons/smile-ghost.png" width="48" height="49" alt="horror">
+                <span class="genres__item-title">Комедии</span>
+              </a>
+              <div class="genres__item-background genres__item-background--horror"></div>
+            </li>
+
+          </ul>
+        </section>
+
+      </section>
+
+      <section class="channels">
+        <ul class="channels__list">
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/first.svg" alt="first">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">Первый канал</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Новости (с субтитрами)</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Давай поженимся</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Другие новости</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/2x2.svg" alt="2x2">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">2x2</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">МУЛЬТ ТВ. Сезон&nbsp;4, 7&nbsp;серия</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон&nbsp;7, 7&nbsp;серия</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">БУРДАШЕВ. Сезон&nbsp;1, 20&nbsp;серия</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/rbk.svg" alt="first">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">РБК</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ДЕНЬ. Горючая смесь: как бороться с&nbsp;суррогатом на&nbsp;АЗС</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ДЕНЬ. Главные темы</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Главные новости</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/amedia.svg" alt="first">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">AMEDIA PREMIUM</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Клиент всегда мёртв</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Голодные игры: Сойка-пересмешница. Часть&nbsp;I</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Секс в&nbsp;большом городе</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/rbk.svg" alt="first">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">РБК</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ДЕНЬ. Горючая смесь: как бороться с&nbsp;суррогатом на&nbsp;АЗС</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ДЕНЬ. Главные темы</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">Главные новости</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="channels__item">
+            <div class="channels__logo-container">
+              <img class="channels__logo" src="../src/img/2x2.svg" alt="2x2">
+            </div>
+            <div class="channels__info">
+              <h4 class="channels__title">2x2</h4>
+              <div class="channels__timetable timetable">
+                <div class="timetable__row timetable__row--active">
+                  <div class="timetable__cell timetable__cell--time">13:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">МУЛЬТ ТВ. Сезон&nbsp;4, 7&nbsp;серия</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">14:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон&nbsp;7, 7&nbsp;серия</a>
+                  </div>
+                </div>
+                <div class="timetable__row">
+                  <div class="timetable__cell timetable__cell--time">15:00</div>
+                  <div class="timetable__cell timetable__cell--title">
+                    <a class="timetable__link" href="#">БУРДАШЕВ. Сезон&nbsp;1, 20&nbsp;серия</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+    </template>
+  <script type="text/javascript" src="main-4b343e40.js"></script></body>
+</html>

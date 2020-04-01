@@ -1,0 +1,67 @@
+@smile-width: 48px;
+@smile-height: 49px;
+
+
+.genres__item {
+  position: relative;
+
+  height: 208px;
+} 
+
+.genres__item-container {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  
+  height: 100%;
+  padding-bottom: 24px;
+}
+
+.genres__item img {
+  position: absolute;
+  top: calc(50% - @smile-height/2);
+  left: calc(50% - @smile-width/2);
+  z-index: 1;
+}
+
+.genres__item-background {
+  position: absolute;
+  top: 0;
+  
+  width: 100%;
+  height: 100%;
+
+  border-radius: 6px;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  
+
+  &--comedy {
+    background: linear-gradient(136.27deg, #F2C94C 8.44%, #F29A4A 91.36%);
+  }
+
+  &--drama {
+    background: linear-gradient(136.27deg, #F2994A 8.44%, #EB5757 91.36%);
+  }
+
+  &--fantasy {
+    background: linear-gradient(136.27deg, #56CCF2 8.44%, #2F80ED 91.36%);
+  }
+
+  &--horror {
+    background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
+  }
+}
+
+.genres__item-container:hover + .genres__item-background {
+  opacity: 1;
+}
+
+.genres__item-title {
+  color: white;
+}

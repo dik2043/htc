@@ -1,0 +1,37 @@
+
+.timetable {
+  display: table;
+  
+  margin-top: 11px;
+  
+  font-size: 16px;
+}
+
+.timetable__row {
+  display: table-row;
+  
+  
+  &--active {
+    color: #E5261E;
+  }
+}
+
+.timetable__cell {
+  display: table-cell;
+  
+  padding: 6px 6px 6px 0;
+  
+  
+  &--title {
+    padding-left: 10px;
+  }
+}
+
+.timetable__link {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.timetable__link:hover {
+  opacity: 0.8;
+}

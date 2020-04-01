@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik-Regular'), url('../fonts/Rubik-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Rubik-Medium'), url('../fonts/Rubik-Medium.woff2') format('woff2');
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  margin: 0;
+  
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+}
+
+h2 {
+  margin: 0;
+  
+  font-size: 24px;
+  font-weight: 500;
+}
+
+input {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button {
+  font-family: inherit;
+}
+
+.wrapper {
+  max-width: 1180px;
+  margin: auto;
+  
+  
+  @media (min-width: 0px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  @media (min-width: 1220px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.form-input {
+  width: 100%;
+  padding: 6px 0;
+  
+  border: none;
+  border-bottom: 1px solid #333333;
+}
+.form-input:focus {
+  outline: none;
+}
+.form-input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: #828282;
+}
+
+.login-btn {
+  width: 113px;
+  height: 38px;
+  padding: 0;
+
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #E5261E;
+  border-radius: 4px;
+  transition: background-color 0.4s;
+}
+
+.login-btn:hover {
+  background-color: #CC221B;
+}
+
+body .shown {
+  opacity: 1;
+}
