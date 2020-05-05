@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
@@ -24,8 +25,8 @@ body {
   margin: 0;
   
   font-family: "Rubik", sans-serif;
-  font-size: 20px;
-  color: #333333;
+  font-size: @font-size--medium;
+  color: @grey;
 }
 
 a {
@@ -49,7 +50,7 @@ h2 {
 
 input {
   font-family: inherit;
-  font-size: 16px;
+  font-size: @font-size;
   font-weight: 500;
 }
 
@@ -67,7 +68,7 @@ button {
     padding-right: 10px;
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: @screen-md) {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -83,13 +84,13 @@ button {
   padding: 6px 0;
   
   border: none;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid @grey;
 }
 .form-input:focus {
   outline: none;
 }
 .form-input::placeholder {
-  font-size: 16px;
+  font-size: @font-size;
   font-weight: normal;
   color: #828282;
 }
@@ -100,19 +101,19 @@ button {
   padding: 0;
 
   cursor: pointer;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: @font-size;
+  line-height: @line-height;
   font-weight: 500;
   outline: none;
   border: none;
   color: white;
-  background-color: #E5261E;
+  background-color: @red;
   border-radius: 4px;
   transition: background-color 0.4s;
 }
 
 .login-btn:hover {
-  background-color: #CC221B;
+  background-color: @red-dark;
 }
 
 body .shown {

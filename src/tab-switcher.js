@@ -49,7 +49,6 @@ const isIdDifferent = (id) => {
 const changeShownSection = (id) => {
     container.lastElementChild.classList.remove('shown');
     container.removeChild(container.lastElementChild);
-    // container.lastElementChild.remove();
     container.appendChild(mapContent[id]);
     window.setTimeout(() => mapContent[id].classList.add('shown'), 50);
 };
@@ -71,9 +70,9 @@ for (let i = 0; i < contentSwitcher.children.length; i++) {
         let id = tabs[i].id;
         removeTabsClass(tabs);
         addTabActiveClass(tabs[i]);
+        
         if (isIdDifferent(id)) {
             changeShownSection(id)
         }
-        // isIdDifferent(id) ? changeShownSection(id) : null;
     })
 }

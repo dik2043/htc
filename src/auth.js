@@ -1,4 +1,6 @@
 
+const body = document.querySelector('body');
+
 const headerLogin = document.querySelector('.header__login');
 const headerLogout = document.querySelector('.header__logout');
 const headerUserName = document.querySelector('.header__user-name');
@@ -15,6 +17,8 @@ const mapPrompt = {
     "modal-pass": "Пожалуйста, введите пароль",
     "all": "Пожалуйста, введите логин и пароль"
 };
+const animationTime = 200;
+const scrollWidth = 17;
 
 
 const showUserInHeader = (name) => {
@@ -30,21 +34,25 @@ const hideUserInHeader = () => {
 };
 
 
-window.localStorage.getItem('userName') ? showUserInHeader(localStorage.getItem('userName')) : null;
+if (window.localStorage.getItem('userName')) {
+    showUserInHeader(localStorage.getItem('userName'));
+} else {
+    showUserInHeader('Константин');
+}
+
 
 const showModal = () => {
     modal.classList.remove('modal--hidden');
     window.setTimeout(() => modal.classList.remove('modal--invisible'), 50);
 };
-
 const hideModal = () => {
     modal.classList.add('modal--invisible');
-    window.setTimeout(() => modal.classList.add('modal--hidden'), 200);
+    window.setTimeout(() => modal.classList.add('modal--hidden'), animationTime);
 };
 
 const addAnimation = () => {
     authForm.classList.add('modal__form--animation');
-    window.setTimeout(() => authForm.classList.remove('modal__form--animation'), 200); 
+    window.setTimeout(() => authForm.classList.remove('modal__form--animation'), animationTime); 
 };
 
 const getPromptId = () => {
@@ -54,42 +62,66 @@ const getPromptId = () => {
     });
     return counter.length <= 1 ? counter[0] : 'all';
 };
+const changePromptText = (id) => {
+    authPrompt.textContent = mapPrompt[id];
+};
 
 const getUserName = () => {
     return authForm.querySelector('.modal__login').value;
 };
 
-const changePromptText = (id) => {
-    authPrompt.textContent = mapPrompt[id];
+const hideScroll = (scrollWidth) => {
+    body.style.overflow = 'hidden';
+    body.style.marginRight = `${ scrollWidth }px`;    
 };
+const showScroll = () => {
+    window.setTimeout(() => {
+        body.style.overflow = 'auto';
+        body.style.marginRight = '0';
+    }, animationTime)
+};
+
+const logIn = () => {
+    const name = getUserName();
+    const isRemember = authForm.querySelector('.modal__remember').checked;
+    if (isRemember) {
+        localStorage.setItem('userName', name);
+    }
+    showUserInHeader(name);
+    hideModal();
+    showScroll();
+};
+
 
 
 headerLogin.addEventListener('click', () => {
     showModal();
+    let scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+    console.log(scrollWidth);
+    hideScroll(scrollWidth);
 });
 
 modalBackground.addEventListener('click', () => {
     hideModal();
+    showScroll();
 });
 
 authForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const id = getPromptId();
-    changePromptText(id);
+    const promptId = getPromptId();
+    changePromptText(promptId);
     
-    if (id) {
+    if (promptId) {
         addAnimation();
     } else {
-        const name = getUserName();
-        const isRemember = authForm.querySelector('.modal__remember').checked;
-        isRemember ? localStorage.setItem('userName', name) : null;
-        showUserInHeader(name);
-        hideModal();
+        logIn()
     }
 });
-
 
 headerLogout.addEventListener('click', () => {
     localStorage.removeItem('userName');
     hideUserInHeader();
 });
+
+
+export default headerUserName;

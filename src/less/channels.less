@@ -22,9 +22,11 @@
   
   margin-left: -16px;
   margin-right: -16px;
-  
-  
-  @media (max-width: 1240px) {
+
+  scrollbar-width: thin;
+
+
+  @media (max-width: @screen-lg) {
     margin-left: 0;
     margin-right: 0;
   }
@@ -40,15 +42,15 @@
   margin-right: 8px;
   padding: 21px 0 13px 0;
   
-  background-color: #F2F2F2;
+  background-color: @grey-light;
   border-radius: 8px;
 
 
-  @media (max-width: 1240px) {
+  @media (max-width: @screen-lg) {
     margin-left: 0;
     margin-right: 0;
   }
-  @media (max-width: 500px) {
+  @media (max-width: @screen-sm) {
     flex-direction: column;
     align-items: center;
   }
@@ -72,7 +74,7 @@
   width: 100%;
   
   
-  @media (max-width: 500px) {
+  @media (max-width: @screen-sm) {
     margin-top: 10px;
   }
 }
@@ -83,7 +85,7 @@
   font-weight: 500;
   
   
-  @media (max-width: 500px) {
+  @media (max-width: @screen-sm) {
     text-align: center;
   }
 }
@@ -93,14 +95,14 @@
 
 
 .channels__list::-webkit-scrollbar-track {
-  background-color: #F2F2F2;
+  background-color: @grey-light;
   border-radius: 2px;
 }
 .channels__list::-webkit-scrollbar {
   width: 8px;
 }
 .channels__list::-webkit-scrollbar-thumb {
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #BDBDBD;
   -webkit-box-shadow: inset 0 0 0 2px rgba(242,242,242,1);
   -moz-box-shadow: inset 0 0 0 2px  rgba(242,242,242,1);

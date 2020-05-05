@@ -8,12 +8,12 @@
 .content-switcher-tab {
   display: flex;
   
-  
   padding-bottom: 9px;
 
   cursor: pointer;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: @font-size--big;
+  font-weight: 500;
+  line-height: @line-height;
   border: none;
   border-bottom: 2px solid transparent;
   transition: all 0.4s;
@@ -25,7 +25,7 @@
     margin-right: 24px;
 
 
-    @media (max-width: 768px) {
+    @media (max-width: @screen-md) {
       margin-right: 3.125vw;
     }
     @media (max-width: 640px) {
@@ -38,15 +38,15 @@
   }
   
   &--active {
-    color: #E5261E;
-    border-color: #E5261E;
+    color: @red;
+    border-color: @red;
   }
   
   
-  @media (max-width: 768px) {
+  @media (max-width: @screen-md) {
     font-size: 3.646vw;
   }
   @media (max-width: 640px) {
-    font-size: 20px;
+    font-size: @font-size--medium;
   }
 }

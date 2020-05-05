@@ -93,7 +93,7 @@ button {
   padding: 0;
   cursor: pointer;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.2;
   font-weight: 500;
   outline: none;
   border: none;
@@ -197,7 +197,7 @@ header {
   padding: 0;
   cursor: pointer;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.2;
   font-weight: 500;
   outline: none;
   border: none;
@@ -224,8 +224,18 @@ header {
 .header__logout-container {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   -ms-flex-item-align: center;
       align-self: center;
+  -ms-flex-align: center;
+      align-items: center;
+  max-width: 100%;
+}
+.header__logout-container .form-input {
+  padding-top: 7px;
+  padding-bottom: 4px;
+  text-align: right;
 }
 .header__login {
   height: 38px;
@@ -234,15 +244,16 @@ header {
   display: none;
 }
 .header__user-name {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 38px;
+  max-width: 270px;
+  width: 100%;
+  height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
   font-size: 16px;
   font-weight: 500;
 }
 .header__logout {
+  height: 38px;
   padding: 0 0 0 16px;
   cursor: pointer;
   font-size: 16px;
@@ -275,7 +286,8 @@ header {
   padding-bottom: 9px;
   cursor: pointer;
   font-size: 28px;
-  line-height: 33px;
+  font-weight: 500;
+  line-height: 1.2;
   border: none;
   border-bottom: 2px solid transparent;
   transition: all 0.4s;
@@ -496,6 +508,7 @@ header {
   overflow: auto;
   margin-left: -16px;
   margin-right: -16px;
+  scrollbar-width: thin;
 }
 @media (max-width: 1240px) {
   .channels__list {
@@ -571,7 +584,7 @@ header {
   width: 8px;
 }
 .channels__list::-webkit-scrollbar-thumb {
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #BDBDBD;
   box-shadow: inset 0 0 0 2px #f2f2f2;
 }
@@ -742,7 +755,7 @@ footer {
 }
 .footer__contacts {
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.2;
 }
 .footer__address {
   margin: 0 0 6px 0;
